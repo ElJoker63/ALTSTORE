@@ -5,7 +5,7 @@
         {
             "beta": false,
             "name": "Cambio Actual",
-            "bundleIdentifier": "com.aewaredev.app",
+            "bundleIdentifier": "com.aewaredev.cambio_actual",
             "developerName": "ElJoker63",
             "subtitle": "",
             "version": "v1.0",
