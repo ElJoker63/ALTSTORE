@@ -6,18 +6,21 @@
 }
 
 :root {
-    --primary: #9b54fd;
-    --primary-dark: #7a3dd4;
-    --secondary: #1a1a2e;
-    --background: #0f0f1a;
-    --surface: #16213e;
+    --primary: #4FC3F7;
+    --primary-dark: #2196F3;
+    --secondary: #0D47A1;
+    --background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0d1b2a 100%);
+    --surface: rgba(255, 255, 255, 0.05);
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.15);
     --text: #ffffff;
-    --text-secondary: #a0a0b0;
-    --gradient: linear-gradient(135deg, #9b54fd 0%, #e94560 100%);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --gradient: linear-gradient(135deg, #4FC3F7 0%, #2196F3 50%, #0D47A1 100%);
 }
 
 body {
     background: var(--background);
+    background-attachment: fixed;
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
@@ -42,14 +45,34 @@ body {
     width: 200%;
     height: 200%;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(155, 84, 253, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(233, 69, 96, 0.1) 0%, transparent 50%);
-    animation: bgMove 20s ease-in-out infinite;
+        radial-gradient(circle at 20% 80%, rgba(79, 195, 247, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(33, 150, 243, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(13, 71, 161, 0.1) 0%, transparent 50%);
+    animation: bgMove 15s ease-in-out infinite;
+}
+
+.bg-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(100px);
 }
 
 @keyframes bgMove {
     0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(-5%, -5%) rotate(5deg); }
+    33% { transform: translate(2%, 2%) rotate(2deg); }
+    66% { transform: translate(-2%, 1%) rotate(-1deg); }
+}
+
+/* Glass Effect */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
 }
 
 /* Header */
@@ -58,12 +81,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(10px);
-    background: rgba(15, 15, 26, 0.8);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(155, 84, 253, 0.2);
+    border-bottom: 1px solid var(--glass-border);
+    background: rgba(10, 10, 26, 0.7);
+    backdrop-filter: blur(20px);
 }
 
 .logo {
@@ -76,11 +99,12 @@ header {
     width: 40px;
     height: 40px;
     background: var(--gradient);
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
+    box-shadow: 0 4px 20px rgba(79, 195, 247, 0.4);
 }
 
 .logo-text {
@@ -101,11 +125,14 @@ header {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
 }
 
 .header-links a:hover {
     color: var(--primary);
+    background: var(--glass);
 }
 
 /* Hero Section */
@@ -121,6 +148,7 @@ header {
     font-weight: 800;
     margin-bottom: 1rem;
     line-height: 1.2;
+    text-shadow: 0 0 40px rgba(79, 195, 247, 0.3);
 }
 
 .hero h1 span {
@@ -161,23 +189,25 @@ header {
     background: var(--gradient);
     color: white;
     border: none;
-    box-shadow: 0 4px 20px rgba(155, 84, 253, 0.4);
+    box-shadow: 0 4px 30px rgba(79, 195, 247, 0.4);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(155, 84, 253, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(79, 195, 247, 0.6);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: var(--glass);
     color: var(--text);
-    border: 2px solid rgba(155, 84, 253, 0.5);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-    background: rgba(155, 84, 253, 0.1);
+    background: rgba(79, 195, 247, 0.2);
     border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 /* Features */
@@ -195,29 +225,33 @@ header {
 }
 
 .feature-card {
-    background: var(--surface);
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(155, 84, 253, 0.1);
-    transition: all 0.3s;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     border-color: var(--primary);
-    box-shadow: 0 10px 40px rgba(155, 84, 253, 0.2);
+    box-shadow: 0 20px 60px rgba(79, 195, 247, 0.2);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .feature-icon {
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     background: var(--gradient);
-    border-radius: 12px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    box-shadow: 0 8px 24px rgba(79, 195, 247, 0.3);
 }
 
 .feature-card h3 {
@@ -245,6 +279,7 @@ header {
 .section-title h2 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(79, 195, 247, 0.3);
 }
 
 .section-title p {
@@ -258,31 +293,46 @@ header {
 }
 
 .app-card {
-    background: var(--surface);
-    border-radius: 16px;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
     padding: 1.5rem;
-    border: 1px solid rgba(155, 84, 253, 0.1);
-    transition: all 0.3s;
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
     display: flex;
     gap: 1rem;
 }
 
 .app-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 10px 40px rgba(155, 84, 253, 0.15);
-    transform: translateY(-3px);
+    box-shadow: 0 20px 60px rgba(79, 195, 247, 0.15);
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .app-icon {
     width: 80px;
     height: 80px;
-    border-radius: 18px;
+    border-radius: 20px;
     background: var(--gradient);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
     flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(79, 195, 247, 0.3);
+    overflow: hidden;
+}
+
+.app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-icon-fallback {
+    font-size: 2.5rem;
 }
 
 .app-info {
@@ -318,7 +368,7 @@ header {
 }
 
 .app-version {
-    background: rgba(155, 84, 253, 0.2);
+    background: rgba(79, 195, 247, 0.2);
     color: var(--primary);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -340,15 +390,19 @@ header {
 .install-card {
     max-width: 600px;
     margin: 0 auto;
-    background: var(--surface);
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     border-radius: 24px;
     padding: 3rem;
-    border: 1px solid rgba(155, 84, 253, 0.2);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .install-card h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(79, 195, 247, 0.3);
 }
 
 .install-card p {
@@ -370,8 +424,9 @@ header {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background: rgba(155, 84, 253, 0.05);
+    background: rgba(79, 195, 247, 0.05);
     border-radius: 12px;
+    border: 1px solid rgba(79, 195, 247, 0.1);
 }
 
 .step-number {
@@ -384,18 +439,114 @@ header {
     justify-content: center;
     font-weight: 700;
     flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(79, 195, 247, 0.4);
 }
 
 .step-text {
     color: var(--text-secondary);
 }
 
+/* News Section */
+.news-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.news-card {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.news-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.news-image {
+    width: calc(100% + 3rem);
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+}
+
+.news-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+
+.news-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.news-category.news {
+    background: rgba(79, 195, 247, 0.2);
+    color: var(--primary);
+}
+
+.news-category.update {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+}
+
+.news-category.release {
+    background: rgba(255, 152, 0, 0.2);
+    color: #FF9800;
+}
+
+.news-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.news-date {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.news-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 /* Footer */
 footer {
     padding: 3rem 2rem;
     text-align: center;
-    border-top: 1px solid rgba(155, 84, 253, 0.1);
+    border-top: 1px solid var(--glass-border);
     margin-top: 4rem;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 footer p {
