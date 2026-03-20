@@ -9,17 +9,18 @@
             "developerName": "ElJoker63",
             "subtitle": "",
             "version": "v1.0",
-            "versionDate": "2025-05-07T11:36:00+02:00",
+            "versionDate": "2026-03-20T11:36:00+02:00",
             "versionDescription": "DCNet support, new on-screen gamepad",
-            "downloadURL": "https://github.com/flyinghead/flycast/releases/download/v2.5/Flycast-2.5.ipa",
-            "localizedDescription": "Flycast is a Dreamcast, Naomi, Naomi 2 and Atomiswave emulator.",
-            "iconURL": "https://github.com/flyinghead/flycast/raw/master/shell/linux/flycast.png",
-            "tintColor": "9b54fd",
+            "downloadURL": "https://github.com/KeimaSenpai/cambio-actual/releases/download/v1.0.0/ipa-flet.ipa",
+            "localizedDescription": "App de prueba de ALTSTORE",
+            "iconURL": "https://github.com/ElJoker63/ALTSTORE/raw/main/assets/img/aewaredev.png",
+            "tintColor": "0071e3",
             "size": 8161611,
             "screenshotURLs": [
-                "https://github.com/flyinghead/flycast/raw/master/shell/imgs/screenshot1.png",
-                "https://github.com/flyinghead/flycast/raw/master/shell/imgs/screenshot2.png",
-                "https://github.com/flyinghead/flycast/raw/master/shell/imgs/screenshot3.png"
+                "https://github.com/ElJoker63/cambio-actual/raw/main/screenshots/1.jpg",
+                "https://github.com/ElJoker63/cambio-actual/raw/main/screenshots/2.jpg",
+                "https://github.com/ElJoker63/cambio-actual/raw/main/screenshots/3.jpg",
+                "https://github.com/ElJoker63/cambio-actual/raw/main/screenshots/4.jpg"
             ]
         },
         {
@@ -163,10 +164,10 @@
     ],
     "news": [
         {
-            "title": "DolphiniOS Version 3.2.0 has been released!",
-            "identifier": "dolphinios-version-3-2-0-release",
-            "caption": "Finally, the public version of DolphiniOS version 3.2.0 has been released!",
-            "date": "2022-05-22T00:00:00.0000000Z",
+            "title": "Bienvenido a AEwareAltStore",
+            "identifier": "",
+            "caption": "Finalmente hemos logrado hacer nuestra propia Store de aplicaciones y juegos para iOS.",
+            "date": "2026-03-20T00:00:00.0000000Z",
             "tintColor": "0074f8",
             "imageURL": "https://cdn.oatmealdome.me/dolphinios/altstore/altstore-banner-3-2-0.png",
             "url": "https://oatmealdome.me/blog/dolphinios-ver-3-2-0/",
