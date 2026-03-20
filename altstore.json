@@ -169,8 +169,8 @@
             "caption": "Finalmente hemos logrado hacer nuestra propia Store de aplicaciones y juegos para iOS.",
             "date": "2026-03-20T00:00:00.0000000Z",
             "tintColor": "0074f8",
-            "imageURL": "https://cdn.oatmealdome.me/dolphinios/altstore/altstore-banner-3-2-0.png",
-            "url": "https://oatmealdome.me/blog/dolphinios-ver-3-2-0/",
+            "imageURL": "https://github.com/ElJoker63/ALTSTORE/raw/main/assets/img/aewaredev.png",
+            "url": "https://eljoker63.github.io/ALTSTORE/",
             "notify": false
         }
     ]
