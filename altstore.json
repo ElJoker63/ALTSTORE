@@ -27,7 +27,7 @@
     "news": [
         {
             "title": "Bienvenido a AEwareAltStore",
-            "identifier": "",
+            "identifier": "1",
             "caption": "Finalmente hemos logrado hacer nuestra propia Store de aplicaciones y juegos para iOS.",
             "date": "2026-03-20T00:00:00.0000000Z",
             "tintColor": "0074f8",
@@ -37,7 +37,7 @@
         },
         {
             "title": "Comienza el desarrollo",
-            "identifier": "",
+            "identifier": "2",
             "caption": "Ahora con esta alternativa, comenzaremos el desarrollo activo de aplicaciones para iOS.",
             "date": "2026-03-21T00:00:00.0000000Z",
             "tintColor": "2997ff",
