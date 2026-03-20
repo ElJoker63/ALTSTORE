@@ -1,6 +1,6 @@
 {
-    "name": "Flyinghead",
-    "identifier": "com.flyinghead.source",
+    "name": "AEwareDevs",
+    "identifier": "com.aewaredev.source",
     "apps": [
         {
             "beta": false,
