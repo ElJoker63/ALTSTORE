@@ -19,26 +19,42 @@ function loadApps(apps) {
     const container = document.getElementById('apps-container');
     
     if (apps && apps.length > 0) {
+        // Crear contenedor interno para las cards
+        const appsWrapper = document.createElement('div');
+        appsWrapper.className = 'apps-wrapper';
+        
+        // Si hay más de 3 apps, envolver en contenedor con scroll
+        if (apps.length > 3) {
+            const scrollContainer = document.createElement('div');
+            scrollContainer.className = 'apps-scroll-container';
+            scrollContainer.appendChild(appsWrapper);
+            container.appendChild(scrollContainer);
+        } else {
+            container.appendChild(appsWrapper);
+        }
+        
         apps.forEach(app => {
             const sizeMB = (app.size / (1024 * 1024)).toFixed(1);
             const card = document.createElement('div');
             card.className = 'app-card';
             card.innerHTML = `
-                <div class="app-icon">
-                    <img src="${app.iconURL}" alt="${app.name}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <span class="app-icon-fallback" style="display: none;">${getAppEmoji(app.name)}</span>
-                </div>
-                <div class="app-info">
-                    <div class="app-name">${app.name}</div>
-                    <div class="app-developer">${app.developerName}</div>
-                    <div class="app-description">${app.localizedDescription || app.subtitle}</div>
-                    <div class="app-meta">
-                        <span class="app-version">${app.version}</span>
-                        <span class="app-size">${sizeMB} MB</span>
+                <div class="app-card-content">
+                    <div class="app-icon">
+                        <img src="${app.iconURL}" alt="${app.name}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="app-icon-fallback" style="display: none;">${getAppEmoji(app.name)}</span>
+                    </div>
+                    <div class="app-info">
+                        <div class="app-name">${app.name}</div>
+                        <div class="app-developer">${app.developerName}</div>
+                        <div class="app-description">${app.localizedDescription || app.subtitle}</div>
+                        <div class="app-meta">
+                            <span class="app-version">${app.version}</span>
+                            <span class="app-size">${sizeMB} MB</span>
+                        </div>
                     </div>
                 </div>
             `;
-            container.appendChild(card);
+            appsWrapper.appendChild(card);
         });
     } else {
         container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); grid-column: 1/-1;">No hay aplicaciones disponibles aún.</p>';
