@@ -22,6 +22,22 @@
                 "https://github.com/ElJoker63/cambio-actual/raw/main/screenshots/3.jpg",
                 "https://github.com/ElJoker63/cambio-actual/raw/main/screenshots/4.jpg"
             ]
+        },
+        {
+            "beta": false,
+            "name": "UDYAT STREAM",
+            "bundleIdentifier": "com.aewaredevs.us",
+            "developerName": "ElJoker63",
+            "subtitle": "asd",
+            "version": "0.0.1",
+            "versionDate": "2026-03-20T11:36:00+02:00",
+            "versionDescription": "Version inicial",
+            "downloadURL": "https://github.com/ElJoker63/udyat-webview/releases/download/v0.0.1/ipa.ipa",
+            "localizedDescription": "UDYATSTREAM es una plataforma de streaming para ver películas y series.",
+            "iconURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
+            "tintColor": "CB9A34",
+            "size": 26528972,
+            "screenshotURLs": []
         }
     ],
     "news": [
