@@ -3,9 +3,9 @@
     "identifier": "com.aewaredev.source",
     "apps": [
         {
-            "beta": false,
-            "name": "UDYAT STREAM",
-            "bundleIdentifier": "com.aewaredevs.us",
+            "beta": true,
+            "name": "UDYATSTREAM",
+            "bundleIdentifier": "com.aewaredev.udyatstream",
             "developerName": "ElJoker63",
             "subtitle": "asd",
             "version": "0.0.1",
