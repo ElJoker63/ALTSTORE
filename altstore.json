@@ -1,6 +1,7 @@
 {
-    "name": "AEwareDevs",
+    "name": "UDYAT APPS",
     "iconURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
+    "headerURL": "https://upyatweb.ddns.net/static/img/default.jpg",
     "website": "https://upyatweb.ddns.net/",
     "identifier": "com.aewaredev.altstore",
     "tintColor": "CB9A34",
@@ -45,14 +46,14 @@
     ],
     "news": [
         {
-            "title": "Bienvenido a AEwareAltStore",
-            "identifier": "1",
+            "title": "Bienvenido a UDYAT APPS",
+            "identifier": "new_feature",
             "caption": "Finalmente hemos logrado hacer nuestra propia Store de aplicaciones y juegos para iOS.",
-            "date": "2026-03-20T00:00:00.0000000Z",
+            "date": "2026-03-20",
             "tintColor": "#00201f",
             "imageURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
             "url": "https://eljoker63.github.io/ALTSTORE/",
-            "notify": false
+            "notify": true
         }
     ]
 }
