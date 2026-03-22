@@ -41,7 +41,9 @@
             "iconURL": "https://udyatmusic.ddnsking.com/static/images/logo.png",
             "tintColor": "0099cc",
             "size": 0,
-            "screenshotURLs": []
+            "screenshotURLs": [],
+            "patreon": {"pledge": 3,
+            "currency": "USD"}
         }
     ],
     "news": [
