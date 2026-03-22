@@ -49,7 +49,7 @@
             "identifier": "1",
             "caption": "Finalmente hemos logrado hacer nuestra propia Store de aplicaciones y juegos para iOS.",
             "date": "2026-03-20T00:00:00.0000000Z",
-            "tintColor": "CB9A34",
+            "tintColor": "#00201f",
             "imageURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
             "url": "https://eljoker63.github.io/ALTSTORE/",
             "notify": false
