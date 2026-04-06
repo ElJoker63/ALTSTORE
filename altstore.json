@@ -1,7 +1,7 @@
 {
     "name": "UDYAT APPS",
-    "iconURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
-    "headerURL": "https://upyatweb.ddns.net/static/img/default.jpg",
+    "iconURL": "https://upyatweb.ddns.net/img/logo.webp",
+    "headerURL": "https://upyatweb.ddns.net/img/bg.jpg",
     "website": "https://upyatweb.ddns.net/",
     "identifier": "com.aewaredev.altstore",
     "tintColor": "CB9A34",
@@ -22,7 +22,8 @@
             "versionDescription": "Version inicial",
             "downloadURL": "https://github.com/ElJoker63/udyat-webview/releases/download/v%24BUILD_VERSION/ipa.ipa",
             "localizedDescription": "UDYATSTREAM es una plataforma de streaming para ver películas y series.",
-            "iconURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
+            "iconURL": "https://upyatweb.ddns.net/img/logo.webp",
+            "headerURL": "https://upyatweb.ddns.net/img/bg.jpg",
             "tintColor": "CB9A34",
             "size": 0,
             "screenshotURLs": []
