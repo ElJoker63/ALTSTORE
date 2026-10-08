@@ -1,9 +1,9 @@
 {
     "name": "UDYAT APPS",
-    "subtitle": "Apps y juegos alternativos para iOS",
+    "subtitle": "Apps alternativos para iOS",
     "description": "Fuente de aplicaciones alternativas para SideStore y AltStore. Sin jailbreak: las apps se firman en tu dispositivo con tu propio Apple ID y se renuevan automaticamente.",
     "iconURL": "https://sidestore.udyat.site/apps/udyat.jpg",
-    "headerURL": "https://sidestore.udyat.site/assets/bg.jpg",
+    "headerURL": "https://sidestore.udyat.site/apps/head.jpg",
     "website": "https://sidestore.udyat.site/",
     "identifier": "com.aewaredev.altstore",
     "tintColor": "#CB9A34",
