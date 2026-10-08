@@ -65,7 +65,22 @@
             "iconURL": "https://sidestore.udyat.site/apps/udyat.jpg",
             "tintColor": "#CB9A34",
             "category": "finance",
-            "screenshotURLs": [],
+            "screenshotURLs": [
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-07_16-40-13.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-07_23-51-37.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_00-37-36.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_16-55-28.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_16-55-29.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_16-55-31.jpg"
+            ],
+            "screenshots": [
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-07_16-40-13.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-07_23-51-37.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_00-37-36.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_16-55-28.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_16-55-29.jpg",
+                "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-08_16-55-31.jpg"
+            ],
             "version": "1.0.5",
             "versionDate": "2026-03-10",
             "versionDescription": "Versión inicial",
