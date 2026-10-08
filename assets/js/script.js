@@ -34,7 +34,10 @@ function loadApps(apps) {
         }
         
         apps.forEach(app => {
-            const sizeMB = (app.size / (1024 * 1024)).toFixed(1);
+            // Formato v2: la última versión es versions[0]; fallback a formato v1
+            const latest = (app.versions && app.versions.length > 0) ? app.versions[0] : app;
+            const sizeBytes = latest.size || 0;
+            const sizeText = sizeBytes > 0 ? `${(sizeBytes / (1024 * 1024)).toFixed(1)} MB` : '';
             const card = document.createElement('div');
             card.className = 'app-card';
             card.innerHTML = `
@@ -48,8 +51,8 @@ function loadApps(apps) {
                         <div class="app-developer">${app.developerName}</div>
                         <div class="app-description">${app.localizedDescription || app.subtitle}</div>
                         <div class="app-meta">
-                            <span class="app-version">${app.version}</span>
-                            <span class="app-size">${sizeMB} MB</span>
+                            <span class="app-version">${latest.version || ''}</span>
+                            <span class="app-size">${sizeText}</span>
                         </div>
                     </div>
                 </div>
@@ -78,7 +81,7 @@ function loadNews(news) {
             card.innerHTML = `
                 ${item.imageURL ? `<img class="news-card-image" src="${item.imageURL}" alt="${item.title}" onerror="this.style.display='none';">` : ''}
                 <div class="news-card-content">
-                    ${item.tintColor ? `<span class="news-category" style="color: #${item.tintColor}">Nueva</span>` : '<span class="news-category">Noticia</span>'}
+                    ${item.tintColor ? `<span class="news-category" style="color: ${item.tintColor.startsWith('#') ? item.tintColor : '#' + item.tintColor}">Nueva</span>` : '<span class="news-category">Noticia</span>'}
                     <h3 class="news-title">${item.title}</h3>
                     <p class="news-date">${date}</p>
                     ${item.caption ? `<p class="news-description">${item.caption}</p>` : ''}

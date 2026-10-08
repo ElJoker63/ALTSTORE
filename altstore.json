@@ -1,10 +1,12 @@
 {
     "name": "UDYAT APPS",
+    "subtitle": "Apps y juegos alternativos para iOS",
+    "description": "Fuente de aplicaciones alternativas para SideStore y AltStore. Sin jailbreak: las apps se firman en tu dispositivo con tu propio Apple ID y se renuevan automaticamente.",
     "iconURL": "https://upyatweb.ddns.net/img/logo.webp",
     "headerURL": "https://upyatweb.ddns.net/img/bg.jpg",
     "website": "https://upyatweb.ddns.net/",
     "identifier": "com.aewaredev.altstore",
-    "tintColor": "CB9A34",
+    "tintColor": "#CB9A34",
     "featuredApps": [
         "com.aewaredev.udyatstream",
         "com.aewaredev.udyatmusic",
@@ -12,48 +14,55 @@
     ],
     "apps": [
         {
-            "beta": true,
             "name": "UDYATSTREAM",
             "bundleIdentifier": "com.aewaredev.udyatstream",
             "developerName": "ElJoker63",
             "subtitle": "UDYATSTREAM es una plataforma de streaming para ver películas y series.",
-            "version": "0.0.1",
-            "versionDate": "2026-03-10T18:36:00+02:00",
-            "versionDescription": "Version inicial",
-            "downloadURL": "https://github.com/ElJoker63/udyat-webview/releases/download/v%24BUILD_VERSION/ipa.ipa",
             "localizedDescription": "UDYATSTREAM es una plataforma de streaming para ver películas y series.",
             "iconURL": "https://upyatweb.ddns.net/img/logo.webp",
-            "headerURL": "https://upyatweb.ddns.net/img/bg.jpg",
-            "tintColor": "CB9A34",
-            "size": 0,
-            "screenshotURLs": []
+            "tintColor": "#CB9A34",
+            "category": "entertainment",
+            "screenshotURLs": [],
+            "versions": [
+                {
+                    "version": "0.0.1",
+                    "date": "2026-03-10",
+                    "localizedDescription": "Versión inicial",
+                    "downloadURL": "https://github.com/ElJoker63/udyat-webview/releases/download/v0.0.1/udyatstream.ipa",
+                    "size": 0,
+                    "minOSVersion": "14.0"
+                }
+            ]
         },
         {
-            "beta": true,
             "name": "UDYATMUSIC",
             "bundleIdentifier": "com.aewaredev.udyatmusic",
             "developerName": "ElJoker63",
             "subtitle": "UDYATMUSIC es una plataforma de streaming para escuchar música en línea.",
-            "version": "0.0.1",
-            "versionDate": "2026-03-20T11:36:00+02:00",
-            "versionDescription": "Version inicial",
-            "downloadURL": "https://github.com/ElJoker63/udyat-webview/releases/download/v0.0.1/ipa.ipa",
-            "localizedDescription": "UDYATSTREAM es una plataforma de streaming para escuchar música en línea.",
+            "localizedDescription": "UDYATMUSIC es una plataforma de streaming para escuchar música en línea.",
             "iconURL": "https://udyatmusic.ddnsking.com/static/images/logo.png",
-            "tintColor": "0099cc",
-            "size": 0,
+            "tintColor": "#0099CC",
+            "category": "music",
             "screenshotURLs": [],
-            "patreon": {"pledge": 3,
-            "currency": "USD"}
+            "versions": [
+                {
+                    "version": "0.0.1",
+                    "date": "2026-03-20",
+                    "localizedDescription": "Versión inicial",
+                    "downloadURL": "https://github.com/ElJoker63/udyat-webview/releases/download/v0.0.1/udyatmusic.ipa",
+                    "size": 0,
+                    "minOSVersion": "14.0"
+                }
+            ]
         }
     ],
     "news": [
         {
             "title": "Bienvenido a UDYAT APPS",
-            "identifier": "new_feature",
+            "identifier": "bienvenida_udyat_apps",
             "caption": "Finalmente hemos logrado hacer nuestra propia Store de aplicaciones y juegos para iOS.",
             "date": "2026-03-20",
-            "tintColor": "#00201f",
+            "tintColor": "#2997FF",
             "imageURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
             "url": "https://eljoker63.github.io/ALTSTORE/",
             "notify": true
