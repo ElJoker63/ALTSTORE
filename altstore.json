@@ -17,10 +17,10 @@
             "name": "UDYAT Downloader",
             "bundleIdentifier": "com.udyat.downloader.udyatDownloader",
             "developerName": "AEwareDevs",
-            "subtitle": "Gestor de descargas multi-plataforma de alta velocidad.",
+            "subtitle": "Gestor de descargas de alta velocidad.",
             "version": "1.0.0",
             "versionDate": "2026-10-08",
-            "localizedDescription": "Gestor de descargas multi-plataforma con soporte para reanudación por partes, proxy y sincronización en la nube.",
+            "localizedDescription": "Gestor de descargas con soporte para reanudación por partes, proxy y sincronización en la nube.",
             "iconURL": "https://upyatweb.ddns.net/img/logo.webp",
             "tintColor": "#0A84FF",
             "category": "utilities",
@@ -29,8 +29,8 @@
                 {
                     "version": "1.0.0",
                     "date": "2026-10-08",
-                    "localizedDescription": "Lanzamiento oficial 1.0.0 multi-plataforma",
-                    "downloadURL": "https://github.com/ElJoker63/UDYAT-DOWN-MULTI/releases/download/v1.0.0/udyat-downloader-ios.ipa",
+                    "localizedDescription": "Lanzamiento oficial 1.0.0",
+                    "downloadURL": "https://api.udyat.site/book?c=4464266336&f=371",
                     "size": 0,
                     "minOSVersion": "14.0"
                 }
