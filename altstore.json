@@ -57,6 +57,40 @@
             ]
         },
         {
+            "name": "ByteMoney",
+            "bundleIdentifier": "com.bytebloom.bytemoney",
+            "developerName": "KeimaSenpai",
+            "subtitle": "ByteMoney es una aplicación para gestionar tu dinero.",
+            "localizedDescription": "ByteMoney es una aplicación para gestionar tu dinero.",
+            "iconURL": "https://sidestore.udyat.site/apps/udyat.jpg",
+            "tintColor": "#CB9A34",
+            "category": "finance",
+            "screenshotURLs": [],
+            "version": "1.0.5",
+            "versionDate": "2026-03-10",
+            "versionDescription": "Versión inicial",
+            "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v1.0.5/bytemoney.ipa",
+            "size": 0,
+            "versions": [
+                {
+                    "version": "1.0.5",
+                    "date": "2026-03-10",
+                    "localizedDescription": "Versión inicial",
+                    "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v1.0.5/bytemoney.ipa",
+                    "size": 0,
+                    "minOSVersion": "14.0"
+                },
+                {
+                    "version": "0.0.1",
+                    "date": "2026-03-10",
+                    "localizedDescription": "Versión inicial",
+                    "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v0.0.1/bytemoney.ipa",
+                    "size": 0,
+                    "minOSVersion": "14.0"
+                }
+            ]
+        },
+        {
             "name": "UDYATSTREAM",
             "bundleIdentifier": "com.aewaredev.udyatstream",
             "developerName": "ElJoker63",
