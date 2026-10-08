@@ -227,6 +227,17 @@ def manage_app(app):
 
     return False
 
+def sync_app_top_level(app):
+    """Sincroniza los campos de compatibilidad raíz con la versión más reciente en versions[0]."""
+    versions = app.get("versions", [])
+    if versions:
+        latest = versions[0]
+        app["version"] = latest.get("version", "")
+        app["versionDate"] = latest.get("date", "")
+        app["versionDescription"] = latest.get("localizedDescription", "")
+        app["downloadURL"] = latest.get("downloadURL", "")
+        app["size"] = latest.get("size", 0)
+
 def main():
     print("==================================================")
     print("   GESTOR DE VERSIONES DE ALTSTORE / SIDESTORE    ")
@@ -247,6 +258,7 @@ def main():
         
         modified = manage_app(app)
         if modified:
+            sync_app_top_level(app)
             save_json(JSON_PATH, data)
 
 if __name__ == "__main__":

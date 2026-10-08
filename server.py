@@ -35,12 +35,78 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = Path(os.getenv("DATA_DIR", BASE_DIR))
 JSON_FILE = DATA_DIR / "altstore.json"
 
-# Inicializar altstore.json si se usa un volumen persistente nuevo
-if not JSON_FILE.exists():
+def sync_app_top_level(app: Dict[str, Any]) -> None:
+    """Sincroniza los campos de compatibilidad raíz con la versión más reciente en versions[0]."""
+    versions = app.get("versions", [])
+    if versions:
+        latest = versions[0]
+        app["version"] = latest.get("version", "")
+        app["versionDate"] = latest.get("date", "")
+        app["versionDescription"] = latest.get("localizedDescription", "")
+        app["downloadURL"] = latest.get("downloadURL", "")
+        app["size"] = latest.get("size", 0)
+
+def sync_sources(source_data: Dict[str, Any], fallback_data: Dict[str, Any]) -> bool:
+    """Combina datos del repositorio con los del volumen persistente."""
+    changed = False
+    target_apps = {a.get("bundleIdentifier"): a for a in source_data.get("apps", [])}
+
+    for fallback_app in fallback_data.get("apps", []):
+        bundle_id = fallback_app.get("bundleIdentifier")
+        if bundle_id not in target_apps:
+            source_data.setdefault("apps", []).append(fallback_app)
+            target_apps[bundle_id] = fallback_app
+            changed = True
+        else:
+            curr_app = target_apps[bundle_id]
+            curr_versions = curr_app.setdefault("versions", [])
+            curr_v_names = {v.get("version") for v in curr_versions}
+            for fb_ver in fallback_app.get("versions", []):
+                v_num = fb_ver.get("version")
+                if v_num not in curr_v_names:
+                    curr_versions.insert(0, fb_ver)
+                    curr_v_names.add(v_num)
+                    changed = True
+
+    for app in source_data.get("apps", []):
+        sync_app_top_level(app)
+
+    return changed
+
+def init_source_json() -> None:
     fallback_json = BASE_DIR / "altstore.json"
-    if fallback_json.exists():
-        logger.info(f"Copiando altstore.json inicial a {JSON_FILE}")
-        shutil.copyfile(fallback_json, JSON_FILE)
+    if not JSON_FILE.exists():
+        if fallback_json.exists():
+            logger.info(f"Copiando altstore.json inicial a {JSON_FILE}")
+            shutil.copyfile(fallback_json, JSON_FILE)
+            try:
+                with open(JSON_FILE, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                for app in data.get("apps", []):
+                    sync_app_top_level(app)
+                with open(JSON_FILE, "w", encoding="utf-8") as f:
+                    json.dump(data, f, indent=4, ensure_ascii=False)
+            except Exception as e:
+                logger.error(f"Error normalizando JSON inicial: {e}")
+    else:
+        if fallback_json.exists() and fallback_json.resolve() != JSON_FILE.resolve():
+            try:
+                with open(fallback_json, "r", encoding="utf-8") as f:
+                    fb_data = json.load(f)
+                with open(JSON_FILE, "r", encoding="utf-8") as f:
+                    curr_data = json.load(f)
+                if sync_sources(curr_data, fb_data):
+                    logger.info("Sincronizadas nuevas versiones desde el repositorio hacia el volumen persistente.")
+                else:
+                    for app in curr_data.get("apps", []):
+                        sync_app_top_level(app)
+                with open(JSON_FILE, "w", encoding="utf-8") as f:
+                    json.dump(curr_data, f, indent=4, ensure_ascii=False)
+            except Exception as e:
+                logger.error(f"Error sincronizando altstore.json con el repositorio: {e}")
+
+# Ejecutar inicialización y sincronización
+init_source_json()
 
 # Secret opcional para verificar que los webhooks vienen de GitHub
 WEBHOOK_SECRET = os.getenv("GITHUB_WEBHOOK_SECRET", "").encode("utf-8")
@@ -67,6 +133,10 @@ def load_source_json() -> Dict[str, Any]:
         return json.load(f)
 
 def save_source_json(data: Dict[str, Any]) -> None:
+    # Asegurar que cada app tiene campos top-level actualizados
+    for app in data.get("apps", []):
+        sync_app_top_level(app)
+
     # Backup de seguridad antes de sobreescribir
     backup_file = JSON_FILE.with_suffix(".json.bak")
     try:
