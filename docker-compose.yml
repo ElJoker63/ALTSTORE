@@ -4,18 +4,12 @@
 #   web      -> https://sidestore.udyat.site  (puerto interno 80)
 #   anisette -> https://anisette.udyat.site   (puerto interno 6969)
 services:
-  # Servidor Python FastAPI: Sirve la landing, altstore.json y
-  # el endpoint webhook (/api/webhook/github) para auto-actualización.
+  # Servidor Python FastAPI: Sirve la landing, assets y altstore.json directamente del repositorio.
   web:
     build: .
     restart: unless-stopped
     expose:
       - "80"
-    environment:
-      - DATA_DIR=/app/data
-      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET:-}
-    volumes:
-      - web-data:/app/data
 
   # Servidor de anisette v3 (Dadoum/anisette-v3-server).
   # Genera los datos anisette que SideStore necesita para firmar/refrescar.
@@ -31,5 +25,4 @@ services:
       - anisette-data:/opt/provision
 
 volumes:
-  web-data:
   anisette-data:
