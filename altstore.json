@@ -62,8 +62,8 @@
             "developerName": "KeimaSenpai",
             "subtitle": "ByteMoney es una aplicación para gestionar tu dinero.",
             "localizedDescription": "ByteMoney es una aplicación para gestionar tu dinero.",
-            "iconURL": "https://sidestore.udyat.site/apps/udyat.jpg",
-            "tintColor": "#CB9A34",
+            "iconURL": "https://sidestore.udyat.site/apps/bytemoney_foreground.png",
+            "tintColor": "#DD8F60",
             "category": "finance",
             "screenshotURLs": [
                 "https://sidestore.udyat.site/apps/bytemoney/photo_2026-10-07_16-40-13.jpg",
@@ -84,23 +84,15 @@
             "version": "1.0.5",
             "versionDate": "2026-03-10",
             "versionDescription": "Versión inicial",
-            "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v1.0.5/bytemoney.ipa",
-            "size": 0,
+            "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v1.0.5/ByteMoney-iOS.ipa",
+            "size": 10122667,
             "versions": [
                 {
                     "version": "1.0.5",
                     "date": "2026-03-10",
                     "localizedDescription": "Versión inicial",
-                    "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v1.0.5/bytemoney.ipa",
-                    "size": 0,
-                    "minOSVersion": "14.0"
-                },
-                {
-                    "version": "0.0.1",
-                    "date": "2026-03-10",
-                    "localizedDescription": "Versión inicial",
-                    "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v0.0.1/bytemoney.ipa",
-                    "size": 0,
+                    "downloadURL": "https://github.com/KeimaSenpai/ByteMoney-App/releases/download/v1.0.5/ByteMoney-iOS.ipa",
+                    "size": 10122667,
                     "minOSVersion": "14.0"
                 }
             ]
