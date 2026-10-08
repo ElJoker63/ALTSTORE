@@ -1,17 +1,21 @@
-# Compose pensado para Coolify: sin mapeos de puerto al host y
-# sin bind mounts (la web se hornea dentro de la imagen via Dockerfile).
+# Compose pensado para Coolify: sin mapeos de puerto al host.
 # Coolify/Traefik enruta por dominio a los puertos internos (expose).
 # Asigna los dominios en la UI de Coolify, servicio por servicio:
 #   web      -> https://sidestore.udyat.site  (puerto interno 80)
 #   anisette -> https://anisette.udyat.site   (puerto interno 6969)
 services:
-  # Sirve la landing + altstore.json (la source). Construida desde
-  # el Dockerfile del repo, asi el contenido viaja dentro de la imagen.
+  # Servidor Python FastAPI: Sirve la landing, altstore.json y
+  # el endpoint webhook (/api/webhook/github) para auto-actualización.
   web:
     build: .
     restart: unless-stopped
     expose:
       - "80"
+    environment:
+      - DATA_DIR=/app/data
+      - GITHUB_WEBHOOK_SECRET=${GITHUB_WEBHOOK_SECRET:-}
+    volumes:
+      - web-data:/app/data
 
   # Servidor de anisette v3 (Dadoum/anisette-v3-server).
   # Genera los datos anisette que SideStore necesita para firmar/refrescar.
@@ -27,4 +31,5 @@ services:
       - anisette-data:/opt/provision
 
 volumes:
+  web-data:
   anisette-data:
