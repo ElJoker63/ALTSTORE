@@ -1,191 +1,121 @@
-// Load apps and news from altstore.json
-async function loadAltStoreData() {
-    try {
-        const response = await fetch('altstore.json');
-        const data = await response.json();
-        
-        // Load apps
-        loadApps(data.apps);
-        
-        // Load news
-        loadNews(data.news);
-    } catch (error) {
-        console.error('Error loading altstore data:', error);
+// UDYAT APPS — landing
+// Alimenta el iPhone del hero y el catálogo con el altstore.json real,
+// y gestiona el reveal orquestado al hacer scroll.
+
+const SOURCE_URL = 'altstore.json';
+const DEEP_LINK = 'sidestore://source?url=https://sidestore.udyat.site/altstore.json';
+
+function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, (ch) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    })[ch]);
+}
+
+function latestVersion(app) {
+    return (app.versions && app.versions.length > 0) ? app.versions[0] : app;
+}
+
+// --- iPhone del hero: renderiza la tienda real dentro de la pantalla ---
+function renderMiniStore(data) {
+    const titleEl = document.getElementById('mini-title');
+    const appsEl = document.getElementById('mini-apps');
+    if (!titleEl || !appsEl) return;
+
+    titleEl.textContent = data.name || 'UDYAT APPS';
+
+    // Respeta featuredApps si existe; si no, las primeras 4 apps.
+    const apps = data.apps || [];
+    let featured = [];
+    if (Array.isArray(data.featuredApps) && data.featuredApps.length) {
+        featured = data.featuredApps
+            .map((id) => apps.find((a) => a.bundleIdentifier === id))
+            .filter(Boolean);
     }
-}
+    if (featured.length === 0) featured = apps.slice(0, 4);
 
-// Load apps
-function loadApps(apps) {
-    const container = document.getElementById('apps-container');
-    
-    if (apps && apps.length > 0) {
-        // Crear contenedor interno para las cards
-        const appsWrapper = document.createElement('div');
-        appsWrapper.className = 'apps-wrapper';
-        
-        // Si hay más de 3 apps, envolver en contenedor con scroll
-        if (apps.length > 3) {
-            const scrollContainer = document.createElement('div');
-            scrollContainer.className = 'apps-scroll-container';
-            scrollContainer.appendChild(appsWrapper);
-            container.appendChild(scrollContainer);
-        } else {
-            container.appendChild(appsWrapper);
-        }
-        
-        apps.forEach(app => {
-            // Formato v2: la última versión es versions[0]; fallback a formato v1
-            const latest = (app.versions && app.versions.length > 0) ? app.versions[0] : app;
-            const sizeBytes = latest.size || 0;
-            const sizeText = sizeBytes > 0 ? `${(sizeBytes / (1024 * 1024)).toFixed(1)} MB` : '';
-            const card = document.createElement('div');
-            card.className = 'app-card';
-            card.innerHTML = `
-                <div class="app-card-content">
-                    <div class="app-icon">
-                        <img src="${app.iconURL}" alt="${app.name}" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <span class="app-icon-fallback" style="display: none;">${getAppEmoji(app.name)}</span>
-                    </div>
-                    <div class="app-info">
-                        <div class="app-name">${app.name}</div>
-                        <div class="app-developer">${app.developerName}</div>
-                        <div class="app-description">${app.localizedDescription || app.subtitle}</div>
-                        <div class="app-meta">
-                            <span class="app-version">${latest.version || ''}</span>
-                            <span class="app-size">${sizeText}</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            appsWrapper.appendChild(card);
-        });
-    } else {
-        container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); grid-column: 1/-1;">No hay aplicaciones disponibles aún.</p>';
-    }
-}
-
-// Load news from altstore.json
-function loadNews(news) {
-    const container = document.getElementById('news-container');
-    
-    if (news && news.length > 0) {
-        // Función para crear una card de noticia
-        function createNewsCard(item) {
-            const date = new Date(item.date).toLocaleDateString('es-ES', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric'
-            });
-            const card = document.createElement('div');
-            card.className = 'news-card';
-            card.innerHTML = `
-                ${item.imageURL ? `<img class="news-card-image" src="${item.imageURL}" alt="${item.title}" onerror="this.style.display='none';">` : ''}
-                <div class="news-card-content">
-                    ${item.tintColor ? `<span class="news-category" style="color: ${item.tintColor.startsWith('#') ? item.tintColor : '#' + item.tintColor}">Nueva</span>` : '<span class="news-category">Noticia</span>'}
-                    <h3 class="news-title">${item.title}</h3>
-                    <p class="news-date">${date}</p>
-                    ${item.caption ? `<p class="news-description">${item.caption}</p>` : ''}
-                    ${item.url ? `<a href="${item.url}" target="_blank" class="news-link">Leer más →</a>` : ''}
-                </div>
-            `;
-            return card;
-        }
-        
-        // Si hay más de 3 noticias, usar carrusel
-        if (news.length > 3) {
-            const carousel = document.createElement('div');
-            carousel.className = 'news-carousel';
-            
-            const carouselInner = document.createElement('div');
-            carouselInner.className = 'news-carousel-inner';
-            
-            // Crear slides mostrando 3 noticias, moviéndose de 1 en 1
-            // Cada slide muestra noticias[i], noticias[i+1], noticias[i+2]
-            const totalSlides = news.length;
-            const slides = [];
-            
-            for (let i = 0; i < totalSlides; i++) {
-                const slide = document.createElement('div');
-                slide.className = 'news-carousel-slide';
-                
-                // Mostrar 3 noticias (con wrap-around)
-                for (let j = 0; j < 3; j++) {
-                    const index = (i + j) % totalSlides;
-                    slide.appendChild(createNewsCard(news[index]));
-                }
-                
-                carouselInner.appendChild(slide);
-                slides.push(slide);
-            }
-            
-            carousel.appendChild(carouselInner);
-            
-            let currentSlide = 0;
-            
-            // Crear indicadores
-            const indicators = document.createElement('div');
-            indicators.className = 'news-carousel-indicators';
-            
-            for (let i = 0; i < totalSlides; i++) {
-                const indicator = document.createElement('div');
-                indicator.className = 'news-carousel-indicator' + (i === 0 ? ' active' : '');
-                indicator.addEventListener('click', () => {
-                    currentSlide = i;
-                    updateCarousel();
-                });
-                indicators.appendChild(indicator);
-            }
-            
-            carousel.appendChild(indicators);
-            container.appendChild(carousel);
-            
-            // Función para actualizar el carrusel
-            function updateCarousel() {
-                carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
-                // Actualizar indicadores
-                document.querySelectorAll('.news-carousel-indicator').forEach((ind, idx) => {
-                    ind.classList.toggle('active', idx === currentSlide);
-                });
-            }
-            
-            // Auto-rotar cada 5 segundos
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }, 5000);
-        } else {
-            // Si hay 3 o menos noticias, mostrarlas centradas sin carrusel
-            news.forEach(item => {
-                container.appendChild(createNewsCard(item));
-            });
-        }
-    } else {
-        container.innerHTML = '<p style="text-align: center; color: var(--text-secondary); grid-column: 1/-1;">No hay noticias aún.</p>';
-    }
-}
-
-function getAppEmoji(name) {
-    const emojis = {
-        'Flycast': '🎮',
-        'DolphiniOS': '🐬',
-        'default': '📱'
-    };
-    return emojis[name] || emojis['default'];
-}
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    loadAltStoreData();
-    
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+    appsEl.innerHTML = '';
+    featured.slice(0, 4).forEach((app) => {
+        const row = document.createElement('div');
+        row.className = 'mini-app';
+        row.innerHTML = `
+            ${app.iconURL ? `<img class="mini-app-icon" src="${escapeHtml(app.iconURL)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '<div class="mini-app-icon"></div>'}
+            <div class="mini-app-info">
+                <div class="mini-app-name">${escapeHtml(app.name)}</div>
+                <div class="mini-app-sub">${escapeHtml(app.subtitle || app.developerName || '')}</div>
+            </div>
+            <span class="mini-app-get">Obtener</span>
+        `;
+        appsEl.appendChild(row);
     });
+}
+
+// --- Catálogo: filas estilo App Store ---
+function renderCatalog(data) {
+    const list = document.getElementById('app-list');
+    if (!list) return;
+    const apps = data.apps || [];
+    list.innerHTML = '';
+
+    apps.forEach((app) => {
+        const v = latestVersion(app);
+        const meta = [app.developerName, v.version ? `v${v.version}` : null]
+            .filter(Boolean).join(' · ');
+
+        const row = document.createElement('a');
+        row.className = 'app-row';
+        row.href = DEEP_LINK;
+        row.setAttribute('aria-label', `Instalar ${app.name} en SideStore`);
+        row.innerHTML = `
+            ${app.iconURL ? `<img class="app-row-icon" src="${escapeHtml(app.iconURL)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">` : '<div class="app-row-icon"></div>'}
+            <div class="app-row-info">
+                <div class="app-row-name">${escapeHtml(app.name)}</div>
+                <div class="app-row-desc">${escapeHtml(app.localizedDescription || app.subtitle || '')}</div>
+                ${meta ? `<div class="app-row-meta">${escapeHtml(meta)}</div>` : ''}
+            </div>
+            <span class="app-row-get">Obtener</span>
+        `;
+        list.appendChild(row);
+    });
+
+    if (apps.length === 0) {
+        const fallback = document.getElementById('catalog-fallback');
+        if (fallback) fallback.hidden = false;
+    }
+}
+
+// --- Reveal orquestado ---
+function initReveal() {
+    const targets = document.querySelectorAll('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+        targets.forEach((el) => el.classList.add('in'));
+        return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    targets.forEach((el) => observer.observe(el));
+}
+
+async function loadSource() {
+    try {
+        const res = await fetch(SOURCE_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        renderMiniStore(data);
+        renderCatalog(data);
+    } catch (err) {
+        console.error('No se pudo cargar la fuente:', err);
+        const fallback = document.getElementById('catalog-fallback');
+        if (fallback) fallback.hidden = false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initReveal();
+    loadSource();
 });

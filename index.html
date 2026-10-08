@@ -3,121 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEwareDevs - SideStore</title>
-    <meta name="description" content="Tu fuente de aplicaciones alternativas para iOS, compatible con SideStore y AltStore">
+    <title>UDYAT APPS — El otro catálogo de tu iPhone</title>
+    <meta name="description" content="Fuente de apps para SideStore. Instálalas en tu iPhone, firmadas con tu propio Apple ID. Sin jailbreak. Se renuevan solas.">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="UDYAT APPS">
+    <meta property="og:description" content="El otro catálogo de tu iPhone. Apps firmadas con tu Apple ID, sin jailbreak.">
+    <meta property="og:type" content="website">
     <link rel="icon" href="assets/img/aewaredev.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="bg-animation"></div>
 
-    <header>
-        <div class="header-content">
-            <a href="#" class="logo">
-                <div class="logo-icon"><img src="assets/img/aewaredev.png" class="logo-icon"></div>
-                <span class="logo-text">AEwareDevs</span>
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-brand" aria-label="UDYAT APPS">
+                <img src="assets/img/aewaredev.png" alt="" class="nav-logo">
+                <span>UDYAT&nbsp;APPS</span>
             </a>
-            <nav class="header-links">
-                <a href="#features">Características</a>
-                <a href="#news">Noticias</a>
-                <a href="#apps">Apps</a>
-                <a href="#install">Instalar</a>
-            </nav>
+            <div class="nav-links">
+                <a href="#catalogo">Catálogo</a>
+                <a href="#como-funciona">Cómo funciona</a>
+                <a href="#faq">FAQ</a>
+                <a href="#instalar" class="nav-cta">Instalar</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <p class="eyebrow" data-reveal>Fuente para SideStore</p>
+        <h1 class="hero-title" data-reveal>El otro catálogo<br>de tu iPhone.</h1>
+        <p class="hero-sub" data-reveal>Instala apps firmadas en tu propio dispositivo, con tu Apple ID.<br>Sin jailbreak. Se renuevan solas.</p>
+        <div class="hero-ctas" data-reveal>
+            <a href="sidestore://source?url=https://sidestore.udyat.site/altstore.json" class="btn-pill">Añadir a SideStore</a>
+            <a href="#catalogo" class="link-chevron">Ver las apps<span class="chev">›</span></a>
+        </div>
+
+        <div class="hero-device" data-reveal>
+            <div class="device-glow"></div>
+            <div class="iphone" aria-hidden="true">
+                <div class="iphone-screen">
+                    <div class="island"></div>
+                    <div class="statusbar"><span>9:41</span>
+                        <span class="statusbar-icons">
+                            <svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="0.5"/><rect x="4.5" y="5" width="3" height="6" rx="0.5"/><rect x="9" y="2.5" width="3" height="8.5" rx="0.5"/><rect x="13.5" y="0" width="3" height="11" rx="0.5"/></svg>
+                            <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="3.5" stroke="currentColor" stroke-opacity="0.4"/><rect x="2" y="2" width="15" height="8" rx="1.5" fill="currentColor"/><path d="M23 4v4c1-.2 1.6-1 1.6-2S24 4.2 23 4z" fill="currentColor" fill-opacity="0.4"/></svg>
+                        </span>
+                    </div>
+                    <div class="mini-store" id="mini-store">
+                        <div class="mini-header">
+                            <div class="mini-title" id="mini-title">UDYAT APPS</div>
+                            <div class="mini-sub">Descubrir</div>
+                        </div>
+                        <div class="mini-apps" id="mini-apps"></div>
+                        <div class="mini-tabbar">
+                            <span class="mini-tab active"></span><span class="mini-tab"></span><span class="mini-tab"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-indicator"></div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>Tu <span>SideStore</span> Personal</h1>
-        <p>Aplicaciones alternativas para tu iPhone y iPad. Sin Jailbreak. La firma se renueva sola.</p>
-        <div class="cta-buttons">
-            <a href="sidestore://source?url=https://sidestore.udyat.site/altstore.json" class="btn btn-primary">
-                Añadir a SideStore
-            </a>
-            <a href="#apps" class="btn btn-secondary">
-                Ver apps
-            </a>
-        </div>
-    </section>
-
-    <section class="features" id="features">
+    <section class="features">
         <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🔒</div>
-                <h3>Seguro</h3>
-                <p>Las apps se firman en tu propio dispositivo con tu Apple ID. Tus credenciales nunca pasan por nuestros servidores.</p>
+            <div class="feature" data-reveal>
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l7 2.8v5.2c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V5.3l7-2.8z"/><path d="M9 11.7l2.2 2.2 4-4.2"/></svg>
+                <h3>Firmas con tu cuenta</h3>
+                <p>Las apps se firman en tu propio iPhone con tu Apple ID. Tus credenciales jamás pasan por nuestros servidores.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔄</div>
-                <h3>Refresco automático</h3>
-                <p>SideStore renueva la firma cada 7 días en segundo plano. Tú no tienes que hacer nada.</p>
+            <div class="feature" data-reveal>
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.5-5.8"/><path d="M20 3.5v3.8h-3.8"/></svg>
+                <h3>Se renueva solo</h3>
+                <p>SideStore refresca la firma cada 7 días en segundo plano. Tú no tienes que volver a hacer nada.</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Rápido</h3>
-                <p>Descargas directas desde GitHub con la máxima velocidad.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📦</div>
-                <h3>Actualizado</h3>
-                <p>Las apps se actualizan automáticamente cuando publicamos nuevas versiones en la fuente.</p>
+            <div class="feature" data-reveal>
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 7.8-1.2"/></svg>
+                <h3>Sin jailbreak</h3>
+                <p>Tu garantía y tus actualizaciones de iOS intactas. Todo funciona con mecanismos oficiales de Apple.</p>
             </div>
         </div>
     </section>
 
-    <section class="news-section" id="news">
-        <div class="section-title">
-            <h2>Últimas Noticias</h2>
-            <p>Mantente al día con las actualizaciones</p>
+    <section class="catalog" id="catalogo">
+        <div class="section-head" data-reveal>
+            <h2>El catálogo.</h2>
+            <p>Instala lo que quieras. Actualiza cuando publiquemos.</p>
         </div>
-        <div class="news-grid" id="news-container">
-            <!-- News will be loaded dynamically -->
-        </div>
+        <div class="app-list" id="app-list"></div>
+        <p class="catalog-fallback" id="catalog-fallback" hidden>Activa JavaScript para ver el catálogo, o añade la fuente directamente desde el botón de arriba.</p>
     </section>
 
-    <section class="apps-section" id="apps">
-        <div class="section-title">
-            <h2>Aplicaciones</h2>
-            <p>Explora nuestra colección de apps</p>
+    <section class="steps" id="como-funciona">
+        <div class="section-head" data-reveal>
+            <h2>Tres pasos. Una vez.</h2>
+            <p>El ordenador solo hace falta para el paso 1. Después, tu iPhone se basta solo.</p>
         </div>
-        <div class="apps-grid" id="apps-container">
-            <!-- Apps will be loaded dynamically -->
-        </div>
+        <ol class="step-list">
+            <li class="step" data-reveal>
+                <span class="step-num">1</span>
+                <div>
+                    <h3>Instala SideStore</h3>
+                    <p>Con <a href="https://sidestore.io" target="_blank" rel="noopener">iloader</a> desde un PC, Mac o Linux. Son cinco minutos y no lo repetirás nunca.</p>
+                </div>
+            </li>
+            <li class="step" data-reveal>
+                <span class="step-num">2</span>
+                <div>
+                    <h3>Añade esta fuente</h3>
+                    <p>Toca «Añadir a SideStore» y la tienda aparece dentro de la app, con su icono y sus novedades.</p>
+                </div>
+            </li>
+            <li class="step" data-reveal>
+                <span class="step-num">3</span>
+                <div>
+                    <h3>Instala tus apps</h3>
+                    <p>SideStore las firma con tu Apple ID y renueva las firmas automáticamente, cada semana, en segundo plano.</p>
+                </div>
+            </li>
+        </ol>
     </section>
 
-    <section class="install-section" id="install">
-        <div class="install-card">
-            <h2>Cómo instalar</h2>
-            <p>Sigue estos pasos para instalar aplicaciones en tu iPhone sin Jailbreak</p>
-            <div class="steps">
-                <div class="step">
-                    <span class="step-number">1</span>
-                    <span class="step-text">Instala SideStore en tu iPhone siguiendo la guía oficial</span>
-                </div>
-                <div class="step">
-                    <span class="step-number">2</span>
-                    <span class="step-text">Inicia sesión en SideStore con tu Apple ID (la firma se hace con tu cuenta, en tu dispositivo)</span>
-                </div>
-                <div class="step">
-                    <span class="step-number">3</span>
-                    <span class="step-text">Pulsa el botón de abajo o añade la fuente manualmente en SideStore</span>
-                </div>
-                <div class="step">
-                    <span class="step-number">4</span>
-                    <span class="step-text">¡Listo! Instala las apps que quieras. La firma se renueva sola cada 7 días</span>
-                </div>
+    <section class="install" id="instalar">
+        <div class="install-card" data-reveal>
+            <h2>Empieza ahora.</h2>
+            <p>Abre esta página desde tu iPhone y toca el botón. SideStore se abrirá con la fuente lista para añadir.</p>
+            <div class="install-ctas">
+                <a href="sidestore://source?url=https://sidestore.udyat.site/altstore.json" class="btn-pill">Añadir a SideStore</a>
             </div>
-            <a href="sidestore://source?url=https://sidestore.udyat.site/altstore.json" class="btn btn-primary">
-                Añadir fuente a SideStore
-            </a>
-            <a href="https://sidestore.io" target="_blank" class="btn btn-secondary">
-                Descargar SideStore
-            </a>
+            <a href="https://sidestore.io" target="_blank" rel="noopener" class="link-chevron">Descargar SideStore<span class="chev">›</span></a>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="section-head" data-reveal>
+            <h2>Preguntas frecuentes.</h2>
+        </div>
+        <div class="faq-list">
+            <details class="faq-item" data-reveal>
+                <summary>¿Es seguro?<span class="faq-plus" aria-hidden="true"></span></summary>
+                <p>Sí. Cada app se firma en tu propio dispositivo con tu propio Apple ID. Tus credenciales nunca salen de tu iPhone ni llegan a nuestros servidores, y SideStore es de código abierto.</p>
+            </details>
+            <details class="faq-item" data-reveal>
+                <summary>¿Por qué se renueva cada 7 días?<span class="faq-plus" aria-hidden="true"></span></summary>
+                <p>Es el límite que Apple pone a las cuentas gratuitas. SideStore renueva la firma automáticamente en segundo plano, así que en la práctica no tienes que hacer nada. Con una cuenta de desarrollador de pago, las apps duran un año.</p>
+            </details>
+            <details class="faq-item" data-reveal>
+                <summary>¿Necesito un ordenador?<span class="faq-plus" aria-hidden="true"></span></summary>
+                <p>Solo una vez, para instalar SideStore con iloader. A partir de ahí, instalar, actualizar y renovar pasa todo en tu iPhone.</p>
+            </details>
+            <details class="faq-item" data-reveal>
+                <summary>¿Cuántas apps puedo tener?<span class="faq-plus" aria-hidden="true"></span></summary>
+                <p>Apple permite 3 apps activas por dispositivo con cuenta gratuita. Si necesitas más, con la cuenta de desarrollador el límite prácticamente desaparece.</p>
+            </details>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 AEwareDevs. Todas las aplicaciones pertenecen a sus desarrolladores.</p>
-        <p>Fuente compatible con <a href="https://sidestore.io" target="_blank">SideStore</a> y <a href="https://altstore.io" target="_blank">AltStore</a>. Esta no es una tienda oficial de Apple.</p>
+        <p class="footer-brand">UDYAT APPS por AEwareDevs</p>
+        <p>Fuente compatible con <a href="https://sidestore.io" target="_blank" rel="noopener">SideStore</a> y <a href="https://altstore.io" target="_blank" rel="noopener">AltStore</a>. Las aplicaciones pertenecen a sus respectivos desarrolladores.</p>
+        <p class="footer-legal">No afiliado a Apple Inc. iPhone es una marca de Apple Inc.</p>
     </footer>
 
     <script src="assets/js/script.js"></script>
