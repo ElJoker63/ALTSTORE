@@ -1,27 +1,28 @@
+# Compose pensado para Coolify: sin mapeos de puerto al host.
+# Coolify/Traefik enruta por dominio a los puertos internos (expose).
+# Asigna los dominios en la UI de Coolify, servicio por servicio:
+#   web      -> https://sidestore.udyat.site  (puerto interno 80)
+#   anisette -> https://anisette.udyat.site   (puerto interno 6969)
 services:
-  # Sirve la landing + altstore.json (la source) por HTTP/HTTPS.
-  # Si ya sirves el JSON con GitHub Pages, puedes comentar este servicio.
+  # Sirve la landing + altstore.json (la source).
   web:
     image: nginx:alpine
-    container_name: udyat-source-web
     restart: unless-stopped
-    ports:
-      - "8080:80"
+    expose:
+      - "80"
     volumes:
       - ./:/usr/share/nginx/html:ro
 
   # Servidor de anisette v3 (Dadoum/anisette-v3-server).
   # Genera los datos anisette que SideStore necesita para firmar/refrescar.
-  # IMPORTANTE: nunca recibe Apple IDs ni credenciales de usuarios.
-  # Los usuarios lo configuran en SideStore -> Settings -> Anisette Servers
-  # apuntando a http://<tu-servidor>:6969
+  # Nunca recibe Apple IDs ni credenciales de usuarios.
+  # Los usuarios lo configuran en SideStore -> Settings -> Anisette Servers.
   anisette:
     build:
       context: https://github.com/Dadoum/anisette-v3-server.git
-    container_name: udyat-anisette
     restart: unless-stopped
-    ports:
-      - "6969:6969"
+    expose:
+      - "6969"
     volumes:
       - anisette-data:/opt/provision
 
