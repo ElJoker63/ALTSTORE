@@ -23,7 +23,18 @@
             "iconURL": "https://sidestore.udyat.site/apps/logo.png",
             "tintColor": "#0A84FF",
             "category": "utilities",
-            "screenshotURLs": [],
+            "screenshotURLs": [
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_14-37-16.jpg",
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_16-34-34.jpg",
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-22-28.jpg",
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-23-23.jpg"
+            ],
+            "screenshots": [
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_14-37-16.jpg",
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_16-34-34.jpg",
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-22-28.jpg",
+                "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-23-23.jpg"
+            ],
             "version": "1.0.2",
             "versionDate": "2026-10-08",
             "versionDescription": "Lanzamiento oficial 1.0.2",
