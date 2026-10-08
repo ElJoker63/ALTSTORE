@@ -4,35 +4,50 @@ Fuente (source) de aplicaciones para **SideStore** y **AltStore**, con:
 
 - `altstore.json` — la source en **formato v2** (compatible con SideStore y AltStore 2).
 - `index.html` — landing page con botón "Añadir a SideStore" (deep link `sidestore://`).
-- `docker-compose.yml` — servidor de **anisette v3** autoalojado + servidor web opcional para el JSON.
+- `Dockerfile` — sirve la landing + el JSON con nginx (despliegue en Coolify).
+- `docker-compose.yml` — alternativa todo-en-uno para VPS sin Coolify.
 
-## URLs
+## URLs de producción (Coolify)
 
-| Servicio | URL |
+| Servicio | Dominio | Puerto interno |
+|---|---|---|
+| Tienda (landing + source) | `https://sidestore.udyat.site` | 80 |
+| Anisette (firma/refresco) | `https://anisette.udyat.site` | 6969 |
+
+| Uso | URL |
 |---|---|
-| Source (GitHub Pages) | `https://eljoker63.github.io/ALTSTORE/altstore.json` |
-| Deep link SideStore | `sidestore://source?url=https://eljoker63.github.io/ALTSTORE/altstore.json` |
-| Deep link AltStore | `altstore://source?url=https://eljoker63.github.io/ALTSTORE/altstore.json` |
+| Source | `https://sidestore.udyat.site/altstore.json` |
+| Deep link SideStore | `sidestore://source?url=https://sidestore.udyat.site/altstore.json` |
+| Deep link AltStore | `altstore://source?url=https://sidestore.udyat.site/altstore.json` |
+
+## Despliegue en Coolify
+
+### 1. Tienda (este repo)
+
+- Tipo: **Dockerfile** (el de este repo, nginx sirviendo la raíz).
+- Dominio: `https://sidestore.udyat.site` → puerto **80**.
+- Activa el **webhook de GitHub** en Coolify para que cada push a `main`
+  redespliegue solo (así "cambiar el JSON" = "la tienda se actualiza").
+
+### 2. Anisette
+
+- Tipo: **Public Repository** → `https://github.com/Dadoum/anisette-v3-server`
+  (su Dockerfile ya viene incluido, Coolify lo construye tal cual).
+- Dominio: `https://anisette.udyat.site` → puerto **6969**.
+- Los usuarios lo ponen en **SideStore → Settings → Anisette Servers**.
+
+> DNS: ambos subdominios (`sidestore.` y `anisette.`) deben apuntar
+> con registros A a la IP del servidor Coolify.
 
 ## Cómo funciona (modelo de firma)
 
 - Cada usuario firma las apps **en su propio iPhone** con **su propio Apple ID**.
-- El Apple ID **nunca pasa por este servidor**. SideStore lo guarda en el keychain del dispositivo.
-- SideStore refresca la firma automáticamente en segundo plano cada pocos días (con StosVPN activo).
-- Lo único que necesita de un servidor son los **datos anisette**, que son anónimos.
-
-## Servidor anisette (autoalojado)
-
-```bash
-docker compose up -d anisette
-```
-
-Tras levantarlo, los usuarios pueden configurarlo en
-**SideStore → Settings → Anisette Servers → `http://<tu-servidor>:6969`**.
-
-> Para exponerlo a Internet es recomendable ponerlo detrás de un proxy con HTTPS
-> (Caddy, nginx, Cloudflare Tunnel…). El servicio `web` del compose también puede
-> servir el `altstore.json` por el puerto 8080 si prefieres no depender de GitHub Pages.
+- El Apple ID **nunca pasa por estos servidores**. SideStore lo guarda en el
+  keychain del dispositivo.
+- SideStore refresca la firma automáticamente en segundo plano cada pocos días
+  (con StosVPN activo).
+- El servidor anisette solo genera **datos anisette anónimos** que Apple exige
+  en cada firma/refresco. No almacena ni recibe credenciales.
 
 ## Publicar una nueva versión de una app
 
@@ -41,7 +56,7 @@ Tras levantarlo, los usuarios pueden configurarlo en
    - Añade un objeto nuevo **al principio** del array `versions[]` de la app
      (la primera entrada es la que se muestra como "última versión").
    - Rellena `version`, `date`, `downloadURL` y el `size` **exacto en bytes** del ipa.
-3. Haz push a `main`. GitHub Pages republica solo y los usuarios ven la
+3. Haz push a `main`; Coolify redespliega por webhook y los usuarios ven la
    actualización en la pestaña de la fuente.
 
 ## Límites de las cuentas Apple gratuitas

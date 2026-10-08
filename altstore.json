@@ -8,11 +8,34 @@
     "identifier": "com.aewaredev.altstore",
     "tintColor": "#CB9A34",
     "featuredApps": [
+        "com.udyat.downloader.udyatDownloader",
         "com.aewaredev.udyatstream",
-        "com.aewaredev.udyatmusic",
-        "com.psyonixllc.mesa"
+        "com.aewaredev.udyatmusic"
     ],
     "apps": [
+        {
+            "name": "UDYAT Downloader",
+            "bundleIdentifier": "com.udyat.downloader.udyatDownloader",
+            "developerName": "AEwareDevs",
+            "subtitle": "Gestor de descargas multi-plataforma de alta velocidad.",
+            "version": "1.0.0",
+            "versionDate": "2026-10-08",
+            "localizedDescription": "Gestor de descargas multi-plataforma con soporte para reanudación por partes, proxy y sincronización en la nube.",
+            "iconURL": "https://upyatweb.ddns.net/img/logo.webp",
+            "tintColor": "#0A84FF",
+            "category": "utilities",
+            "screenshotURLs": [],
+            "versions": [
+                {
+                    "version": "1.0.0",
+                    "date": "2026-10-08",
+                    "localizedDescription": "Lanzamiento oficial 1.0.0 multi-plataforma",
+                    "downloadURL": "https://github.com/ElJoker63/UDYAT-DOWN-MULTI/releases/download/v1.0.0/udyat-downloader-ios.ipa",
+                    "size": 0,
+                    "minOSVersion": "14.0"
+                }
+            ]
+        },
         {
             "name": "UDYATSTREAM",
             "bundleIdentifier": "com.aewaredev.udyatstream",
@@ -64,7 +87,7 @@
             "date": "2026-03-20",
             "tintColor": "#2997FF",
             "imageURL": "https://upyatweb.ddns.net/static/img/logo_anim.webp",
-            "url": "https://eljoker63.github.io/ALTSTORE/",
+            "url": "https://sidestore.udyat.site/",
             "notify": true
         }
     ]
