@@ -13,6 +13,7 @@ import hmac
 import hashlib
 import shutil
 import logging
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, Dict, Any, List
@@ -35,8 +36,21 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = Path(os.getenv("DATA_DIR", BASE_DIR))
 JSON_FILE = DATA_DIR / "altstore.json"
 
+def version_sort_key(ver_dict: Dict[str, Any]) -> List[int]:
+    """Extrae componentes numéricos para ordenar versiones semánticas (ej: 1.0.2 > 1.0.1 > 1.0.0)."""
+    ver_str = ver_dict.get("version", "0")
+    numbers = [int(n) for n in re.findall(r"\d+", str(ver_str))]
+    return numbers if numbers else [0]
+
+def sort_app_versions(app: Dict[str, Any]) -> None:
+    """Ordena las versiones de mayor a menor para que la más reciente siempre esté en el índice 0."""
+    versions = app.get("versions", [])
+    if versions:
+        versions.sort(key=version_sort_key, reverse=True)
+
 def sync_app_top_level(app: Dict[str, Any]) -> None:
-    """Sincroniza los campos de compatibilidad raíz con la versión más reciente en versions[0]."""
+    """Ordena versiones y sincroniza campos de compatibilidad raíz con la versión más reciente en versions[0]."""
+    sort_app_versions(app)
     versions = app.get("versions", [])
     if versions:
         latest = versions[0]
@@ -47,8 +61,12 @@ def sync_app_top_level(app: Dict[str, Any]) -> None:
         app["size"] = latest.get("size", 0)
 
 def sync_sources(source_data: Dict[str, Any], fallback_data: Dict[str, Any]) -> bool:
-    """Combina datos del repositorio con los del volumen persistente."""
+    """Combina datos del repositorio con los del volumen persistente manteniendo el orden correcto."""
     changed = False
+    
+    if "sourceURL" in fallback_data:
+        source_data["sourceURL"] = fallback_data["sourceURL"]
+
     target_apps = {a.get("bundleIdentifier"): a for a in source_data.get("apps", [])}
 
     for fallback_app in fallback_data.get("apps", []):
@@ -64,7 +82,7 @@ def sync_sources(source_data: Dict[str, Any], fallback_data: Dict[str, Any]) -> 
             for fb_ver in fallback_app.get("versions", []):
                 v_num = fb_ver.get("version")
                 if v_num not in curr_v_names:
-                    curr_versions.insert(0, fb_ver)
+                    curr_versions.append(fb_ver)
                     curr_v_names.add(v_num)
                     changed = True
 
@@ -341,6 +359,31 @@ async def github_webhook(
     }
 
 # --- RUTAS DE FUENTE DE ALTSTORE Y ARCHIVOS ESTÁTICOS ---
+
+@app.get("/api/source/sync", tags=["Sistema"])
+@app.post("/api/source/sync", tags=["Sistema"])
+def force_sync_source():
+    """Fuerza la sincronización y ordenamiento de altstore.json con el archivo base del repositorio."""
+    fallback_json = BASE_DIR / "altstore.json"
+    if not fallback_json.exists():
+        raise HTTPException(status_code=404, detail="altstore.json base no encontrado en el servidor.")
+    with open(fallback_json, "r", encoding="utf-8") as f:
+        fb_data = json.load(f)
+    curr_data = load_source_json() if JSON_FILE.exists() else {}
+    sync_sources(curr_data, fb_data)
+    save_source_json(curr_data)
+    return {
+        "status": "success",
+        "message": "Fuente sincronizada y ordenada semánticamente con éxito.",
+        "apps": [
+            {
+                "name": a.get("name"),
+                "latestVersion": a.get("version"),
+                "totalVersions": len(a.get("versions", []))
+            }
+            for a in curr_data.get("apps", [])
+        ]
+    }
 
 @app.get("/altstore.json", tags=["Fuente"])
 def serve_altstore_json():
