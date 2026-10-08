@@ -1,6 +1,7 @@
 FROM nginx:alpine
 
-COPY index.html altstore.json /usr/share/nginx/html/
-COPY assets/ /usr/share/nginx/html/assets/
+# Copia todo el repo (menos lo excluido en .dockerignore):
+# cualquier carpeta nueva (apps/, img/, etc.) se sirve sola tras cada deploy.
+COPY . /usr/share/nginx/html/
 
 EXPOSE 80
