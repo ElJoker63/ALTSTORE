@@ -34,12 +34,20 @@
                 "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-22-28.jpg",
                 "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-23-23.jpg"
             ],
-            "version": "1.0.7",
+            "version": "1.0.8",
             "versionDate": "2026-10-10",
-            "versionDescription": "- ✨ Reemplazado todo el sistema de iconos por el paquete oficial HugeIcons (Stroke Rounded).\n- 🚀 Optimización de rendimiento en interfaz: matriz de progreso con dibujado GPU Canvas (CustomPainter) eliminando 240 widgets de la vista.\n- ⚡ Escrituras de base de datos SQLite asíncronas no bloqueantes con modo WAL activado.\n- 🛡️ Verificación de integridad MD5 post-descarga en fragmentos y limpieza automática de temporales .udyat_part.\n- 📱 Soporte multiplataforma completo para Windows, Linux, macOS, iOS y Android con firma APK oficial.",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.7/udyat-downloader-ios.ipa",
-            "size": 9623664,
+            "versionDescription": "- ⚡ Actualizaciones automáticas nativas y 100% silenciosas en Windows, macOS, Linux y Android sin ventanas negras de consola.\n- 🔐 Optimización y minificación de APK con R8 / ProGuard y ofuscación Dart AOT (reducción del 40% en tamaño de APK).\n- 🚀 Rendimiento ultra-fluido en descargas de archivos gigabyte utilizando Isolates de fondo en segundo plano para unificación de partes y cálculo MD5.\n- 📱 Instalador de actualización con progreso Glass en vivo y comprobación silenciosa únicamente al iniciar la app.\n- 🌐 Actualizado enlace de ayuda \"Enlace No Disponible\" a la comunidad de Telegram @todusdown.",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.8/udyat-downloader-ios.ipa",
+            "size": 9638140,
             "versions": [
+                {
+                    "version": "1.0.8",
+                    "date": "2026-10-10",
+                    "localizedDescription": "- ⚡ Actualizaciones automáticas nativas y 100% silenciosas en Windows, macOS, Linux y Android sin ventanas negras de consola.\n- 🔐 Optimización y minificación de APK con R8 / ProGuard y ofuscación Dart AOT (reducción del 40% en tamaño de APK).\n- 🚀 Rendimiento ultra-fluido en descargas de archivos gigabyte utilizando Isolates de fondo en segundo plano para unificación de partes y cálculo MD5.\n- 📱 Instalador de actualización con progreso Glass en vivo y comprobación silenciosa únicamente al iniciar la app.\n- 🌐 Actualizado enlace de ayuda \"Enlace No Disponible\" a la comunidad de Telegram @todusdown.",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.8/udyat-downloader-ios.ipa",
+                    "size": 9638140,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.0.7",
                     "date": "2026-10-10",
