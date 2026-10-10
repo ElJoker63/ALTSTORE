@@ -48,12 +48,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.0.8",
+            "version": "1.0.9",
             "versionDate": "2026-10-10",
-            "versionDescription": "- ⚡ Actualizaciones automáticas nativas y 100% silenciosas en Windows, macOS, Linux y Android sin ventanas negras de consola.\n- 🔐 Optimización y minificación de APK con R8 / ProGuard y ofuscación Dart AOT (reducción del 40% en tamaño de APK).\n- 🚀 Rendimiento ultra-fluido en descargas de archivos gigabyte utilizando Isolates de fondo en segundo plano para unificación de partes y cálculo MD5.\n- 📱 Instalador de actualización con progreso Glass en vivo y comprobación silenciosa únicamente al iniciar la app.\n- 🌐 Actualizado enlace de ayuda \"Enlace No Disponible\" a la comunidad de Telegram @todusdown.",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.8/udyat-downloader-ios.ipa",
-            "size": 9638140,
+            "versionDescription": "- 🖥️ Minimizar a la bandeja del sistema (System Tray) en Windows, macOS y Linux para continuar tus descargas en segundo plano.\n- 💤 Prevención automática de suspensión del sistema: mantiene despierto el ordenador y el dispositivo mientras existan descargas activas.\n- 🔄 Reanudación automática por reconexión a Internet: si se interrumpe tu conexión Wi-Fi, Ethernet o datos, las descargas se reanudan solas al regresar la red.\n- 📋 Detección automática del portapapeles: si copias un enlace o archivo de descarga, la app te avisará para agregarlo en un solo toque.\n- 💾 Verificación previa de espacio libre en disco: comprueba automáticamente que tengas suficiente espacio disponible antes de iniciar descargas grandes.\n- 📁 Clasificación por categorías: organiza e identifica rápidamente tus descargas filtrando por Vídeos, Música, Imágenes, Comprimidos, Documentos o Apps.\n- 📱 Importación directa desde Telegram, WhatsApp y tus archivos en iPhone, iPad y Android.\n- 🔔 Solicitud automática de permisos de notificación al abrir la app para mantenerte al tanto de tus descargas.\n- 📐 Diseño adaptativo mejorado para todo tipo de pantallas sin recortes de texto.\n- 👥 Enlace actualizado a la comunidad oficial de ayuda en Telegram.",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.9/udyat-downloader-ios.ipa",
+            "size": 9713485,
             "versions": [
+                {
+                    "version": "1.0.9",
+                    "date": "2026-10-10",
+                    "localizedDescription": "- 🖥️ Minimizar a la bandeja del sistema (System Tray) en Windows, macOS y Linux para continuar tus descargas en segundo plano.\n- 💤 Prevención automática de suspensión del sistema: mantiene despierto el ordenador y el dispositivo mientras existan descargas activas.\n- 🔄 Reanudación automática por reconexión a Internet: si se interrumpe tu conexión Wi-Fi, Ethernet o datos, las descargas se reanudan solas al regresar la red.\n- 📋 Detección automática del portapapeles: si copias un enlace o archivo de descarga, la app te avisará para agregarlo en un solo toque.\n- 💾 Verificación previa de espacio libre en disco: comprueba automáticamente que tengas suficiente espacio disponible antes de iniciar descargas grandes.\n- 📁 Clasificación por categorías: organiza e identifica rápidamente tus descargas filtrando por Vídeos, Música, Imágenes, Comprimidos, Documentos o Apps.\n- 📱 Importación directa desde Telegram, WhatsApp y tus archivos en iPhone, iPad y Android.\n- 🔔 Solicitud automática de permisos de notificación al abrir la app para mantenerte al tanto de tus descargas.\n- 📐 Diseño adaptativo mejorado para todo tipo de pantallas sin recortes de texto.\n- 👥 Enlace actualizado a la comunidad oficial de ayuda en Telegram.",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.9/udyat-downloader-ios.ipa",
+                    "size": 9713485,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.0.8",
                     "date": "2026-10-10",
