@@ -34,12 +34,20 @@
                 "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-22-28.jpg",
                 "https://sidestore.udyat.site/apps/udyatdownloader/photo_2026-10-08_17-23-23.jpg"
             ],
-            "version": "1.0.3",
-            "versionDate": "2026-10-09",
-            "versionDescription": "Lanzamiento oficial 1.0.3",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.3/udyat-downloader-ios.ipa",
-            "size": 9643919,
+            "version": "1.0.4",
+            "versionDate": "2026-10-10",
+            "versionDescription": "Lanzamiento oficial 1.0.4",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.4/udyat-downloader-ios.ipa",
+            "size": 9667408,
             "versions": [
+                {
+                    "version": "1.0.4",
+                    "date": "2026-10-10",
+                    "localizedDescription": "Lanzamiento oficial 1.0.4",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.0.4/udyat-downloader-ios.ipa",
+                    "size": 9667408,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.0.3",
                     "date": "2026-10-09",
