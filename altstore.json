@@ -48,12 +48,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.1.1",
+            "version": "1.1.2",
             "versionDate": "2026-10-11",
-            "versionDescription": "### 👤 Perfil y Cuenta\n- **Reconocimiento correcto de tu computadora**: al vincular tu cuenta desde Windows, Mac o Linux, la app se identifica correctamente como computadora en lugar de teléfono móvil.\n- **Lista de dispositivos conectados**: nueva sección en el perfil que muestra cuántos equipos tienes vinculados y resalta el dispositivo actual con la insignia \"Este equipo\".\n### 📱 Facilidad de Uso y Compatibilidad\n- **Apertura directa de archivos desde Telegram**: solucionado el problema al tocar archivos `.udyat` y listas `.txt` desde Telegram o gestores de archivos en Android y computadoras.\n- **Pregunta de confirmación al cerrar en PC**: al presionar la \"X\" de cerrar en tu computadora, puedes elegir entre minimizar la app al tray para mantener las descargas o salir completamente.\n- **Minimizar directo a la bandeja**: el botón de minimizar (`_`) oculta la ventana directamente al icono junto al reloj del sistema.\n### 🎨 Ajustes y Diseño\n- **Vaciar carpeta de descargas**: nuevo botón en Ajustes para borrar todos los archivos guardados en tu carpeta de descargas con un toque y ventana de confirmación.\n- **Botones de mantenimiento coloreados**: botones de la sección de almacenamiento identificados con colores (Verde para compactar BD, Azul para huérfanos y Rojo para vaciar carpeta).\n- **Diseño adaptado a modo claro y oscuro**: solucionada la apariencia visual del visor de registros de errores, los diálogos de confirmación y el menú desplegable de ordenación de descargas.\n- **Logo renovado en \"Acerca de\"**: se aumentó el tamaño del logo y se eliminó el fondo circular para una vista más limpia.\n- **Icono de bandeja oficial en Windows**: añadido el icono nativo `.ico` para una correcta visualización en la barra de tareas de Windows.\n### 🔒 Privacidad y Rendimiento\n- **Privacidad en reportes de errores**: la app ya no envía reportes automáticos por red al ocurrir una falla; ahora tú decides cuándo enviarlos manualmente desde la pantalla de registros.\n- **Mayor estabilidad en Android**: corregidos errores de inicio y esquema de base de datos local al actualizar o instalar la aplicación.",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.1.1/udyat-downloader-ios.ipa",
-            "size": 9218700,
+            "versionDescription": "### 🔔 Actualizaciones y Pantallas\n- **Pantalla de actualización corregida**: solucionado el problema visual que mostraba la ventana de aviso de actualización en blanco en Android, Windows e iOS. Ahora las novedades y el botón de actualizar se muestran de forma clara y legible.",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.1.2/udyat-downloader-ios.ipa",
+            "size": 9218849,
             "versions": [
+                {
+                    "version": "1.1.2",
+                    "date": "2026-10-11",
+                    "localizedDescription": "### 🔔 Actualizaciones y Pantallas\n- **Pantalla de actualización corregida**: solucionado el problema visual que mostraba la ventana de aviso de actualización en blanco en Android, Windows e iOS. Ahora las novedades y el botón de actualizar se muestran de forma clara y legible.",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.1.2/udyat-downloader-ios.ipa",
+                    "size": 9218849,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.1.1",
                     "date": "2026-10-11",
