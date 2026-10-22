@@ -48,12 +48,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.2.2",
+            "version": "1.2.3",
             "versionDate": "2026-10-22",
             "versionDescription": "### 📥 Archivos y Descargas\n- **Apertura directa desde Telegram**: Ya puedes abrir o compartir cualquier archivo `.udyat` directamente desde Telegram u otras aplicaciones sin que aparezcan avisos de error.\n- **Nombres originales conservados**: La aplicación ahora reconoce y mantiene siempre el nombre real de tus archivos al recibirlos de otras aplicaciones.\n- **Agregar archivos con mayor facilidad**: Al seleccionar archivos dentro de la aplicación, ahora se reconocen y cargan correctamente incluso si han sido renombrados.\n- **Descargas continuas sin bloqueos**: Se corrigió un problema que impedía agregar varios archivos seguidos a la cola de descargas.\n### 📱 Instaladores Optimizados\n- **Mejor compatibilidad en Android**: Corrección interna para asegurar que recibas la versión exacta y más ligera adecuada para tu dispositivo.",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.2/udyat-downloader-ios.ipa",
-            "size": 9348999,
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.3/udyat-downloader-ios.ipa",
+            "size": 9347987,
             "versions": [
+                {
+                    "version": "1.2.3",
+                    "date": "2026-10-22",
+                    "localizedDescription": "### 📥 Archivos y Descargas\n- **Apertura directa desde Telegram**: Ya puedes abrir o compartir cualquier archivo `.udyat` directamente desde Telegram u otras aplicaciones sin que aparezcan avisos de error.\n- **Nombres originales conservados**: La aplicación ahora reconoce y mantiene siempre el nombre real de tus archivos al recibirlos de otras aplicaciones.\n- **Agregar archivos con mayor facilidad**: Al seleccionar archivos dentro de la aplicación, ahora se reconocen y cargan correctamente incluso si han sido renombrados.\n- **Descargas continuas sin bloqueos**: Se corrigió un problema que impedía agregar varios archivos seguidos a la cola de descargas.\n### 📱 Instaladores Optimizados\n- **Mejor compatibilidad en Android**: Corrección interna para asegurar que recibas la versión exacta y más ligera adecuada para tu dispositivo.",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.3/udyat-downloader-ios.ipa",
+                    "size": 9347987,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.2.2",
                     "date": "2026-10-22",
