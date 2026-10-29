@@ -48,12 +48,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.2.6",
+            "version": "1.2.7",
             "versionDate": "2026-10-29",
-            "versionDescription": "- Fix método de descarga",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.6/udyat-downloader-ios.ipa",
-            "size": 9441843,
+            "versionDescription": "- **Mayor privacidad y seguridad en tus archivos en la nube:** Ahora tu sección de almacenamiento en la nube muestra únicamente tus propios archivos, garantizando que nadie más pueda verlos ni modificarlos y evitando borrar contenido ajeno por error.\n- **Soporte fluido para descargas gigantes:** Se optimizó la app para abrir, importar y procesar archivos de gran tamaño o con miles de fragmentos sin congelamientos ni cierres inesperados.\n- **Barra de fragmentos renovada en las descargas:** La barra visual en las tarjetas de descarga ahora se adapta automáticamente para mostrarte siempre el avance de cada parte del archivo de forma rápida, precisa y sin ralentizar la pantalla.\n- **Monitoreo de conexiones en tiempo real:** Dentro de los detalles de la descarga, la pestaña de conexiones ahora refleja con exactitud en vivo cuáles partes ya han finalizado y cuáles se están descargando activamente.\n- **Actualización automática mejorada en computadoras Mac:** El actualizador en macOS ahora reemplaza la versión existente de forma transparente y sin pasos manuales.",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.7/udyat-downloader-ios.ipa",
+            "size": 9445576,
             "versions": [
+                {
+                    "version": "1.2.7",
+                    "date": "2026-10-29",
+                    "localizedDescription": "- **Mayor privacidad y seguridad en tus archivos en la nube:** Ahora tu sección de almacenamiento en la nube muestra únicamente tus propios archivos, garantizando que nadie más pueda verlos ni modificarlos y evitando borrar contenido ajeno por error.\n- **Soporte fluido para descargas gigantes:** Se optimizó la app para abrir, importar y procesar archivos de gran tamaño o con miles de fragmentos sin congelamientos ni cierres inesperados.\n- **Barra de fragmentos renovada en las descargas:** La barra visual en las tarjetas de descarga ahora se adapta automáticamente para mostrarte siempre el avance de cada parte del archivo de forma rápida, precisa y sin ralentizar la pantalla.\n- **Monitoreo de conexiones en tiempo real:** Dentro de los detalles de la descarga, la pestaña de conexiones ahora refleja con exactitud en vivo cuáles partes ya han finalizado y cuáles se están descargando activamente.\n- **Actualización automática mejorada en computadoras Mac:** El actualizador en macOS ahora reemplaza la versión existente de forma transparente y sin pasos manuales.",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.7/udyat-downloader-ios.ipa",
+                    "size": 9445576,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.2.6",
                     "date": "2026-10-29",
