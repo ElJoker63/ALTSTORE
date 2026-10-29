@@ -48,12 +48,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.2.5",
-            "versionDate": "2026-10-28",
-            "versionDescription": "### 🚀 Novedades y Mejoras\n- **Reconocimiento de planes y distribuidores en perfil:** Tu perfil ahora identifica con total claridad todos los tipos de suscripción disponibles en la plataforma (incluyendo el Plan BASIC, Plan Revendedor y cuentas asignadas por distribuidores oficiales).\n- **Insignias y estados contextuales:** Si tu cuenta es gestionada por un distribuidor oficial, la aplicación muestra una insignia distintiva de \"CLIENTE DISTRIBUIDOR\", adaptando la información de vigencia y tráfico de manera transparente para tus descargas.\n- **Identificación permanente y segura de tu equipo:** Tu dispositivo ahora cuenta con una identificación única e inmutable para brindarte soporte técnico personalizado y proteger la seguridad de tu cuenta.\n- **Nueva pantalla informativa de estado:** En caso de que un dispositivo requiera atención o soporte por restricciones del servicio, se muestra una pantalla clara con el motivo correspondiente, tu identificador para soporte y un botón para contactar directamente a los administradores.\n- **Actualización automática en tiempo real:** Si tu estado o el de tu dispositivo es restaurado por soporte, la aplicación lo detecta al instante y te permite continuar descargando sin necesidad de cerrar ni reiniciar la app.\n- **Diseño adaptativo y dinámico:** La pantalla informativa se adapta automáticamente tanto al tema claro como al tema oscuro de la aplicación, incorporando una animación de pulso visual moderna.\n- **Acceso directo a la comunidad y soporte en Telegram:** Se renovaron los accesos en el menú lateral para que puedas ingresar de manera directa e independiente al Canal Oficial de novedades y al Grupo Oficial de Ayuda y Comunidad.",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.5/udyat-downloader-ios.ipa",
-            "size": 9438421,
+            "version": "1.2.6",
+            "versionDate": "2026-10-29",
+            "versionDescription": "- Fix método de descarga",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.6/udyat-downloader-ios.ipa",
+            "size": 9441843,
             "versions": [
+                {
+                    "version": "1.2.6",
+                    "date": "2026-10-29",
+                    "localizedDescription": "- Fix método de descarga",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.6/udyat-downloader-ios.ipa",
+                    "size": 9441843,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.2.5",
                     "date": "2026-10-28",
