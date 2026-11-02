@@ -406,36 +406,6 @@
             "imageURL": "https://sidestore.udyat.site/apps/head.jpg",
             "url": "https://sidestore.udyat.site/",
             "notify": true
-        },
-        {
-            "title": "3.3.0 — iCloud Sync, New tvOS UI & Video Filters",
-            "identifier": "release-3.3.0",
-            "caption": "What's New in 3.3.0 This is a big one. Four months of work since 3.2.1 covering iCloud sync, a completely revamped tvOS interface, video filters, and a ton of core and stability fixes.",
-            "date": "2026-03-14T02:17:44Z",
-            "tintColor": "#8A2BE2",
-            "url": "https://github.com/Provenance-Emu/Provenance/releases/tag/3.3.0",
-            "appID": "com.provenance-emu.provenance",
-            "notify": false
-        },
-        {
-            "title": "3.2.1 - iPad skin bug fixes",
-            "identifier": "release-3.2.1",
-            "caption": "**Full Changelog**: https://github.com/Provenance-Emu/Provenance/compare/3.2.0...3.2.1 Bug fixes:",
-            "date": "2025-11-23T18:54:37Z",
-            "tintColor": "#8A2BE2",
-            "url": "https://github.com/Provenance-Emu/Provenance/releases/tag/3.2.1",
-            "appID": "com.provenance-emu.provenance",
-            "notify": false
-        },
-        {
-            "title": "3.2.0 - Skins, many bug fixes, speedups",
-            "identifier": "release-3.2.0",
-            "caption": "Release 3.2.0 We're excited to announce Provenance 3.2.0, a major update focused on performance, skins, and quality of life improvements. This release brings highly requested features and fixes tha...",
-            "date": "2025-11-20T20:56:43Z",
-            "tintColor": "#8A2BE2",
-            "url": "https://github.com/Provenance-Emu/Provenance/releases/tag/3.2.0",
-            "appID": "com.provenance-emu.provenance",
-            "notify": false
         }
     ]
 }
