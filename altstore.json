@@ -378,11 +378,11 @@
             "name": "UDYAT VPN",
             "bundleIdentifier": "site.udyat.vpn",
             "developerName": "ElJoker63",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "versionDate": "2026-11-01",
             "iconURL": "https://sidestore.udyat.site/apps/vpn.png",
             "versionDescription": "Soporte completo de Split-Tunneling (incluir/excluir apps), motor real TUN y rotación de proxies.",
-            "downloadURL": "https://gitea.udyat.site/ElJoker63/UDYAT-VPN/releases/download/v1.0.2/UDYAT-VPN-v1.0.2-ios.ipa",
+            "downloadURL": "https://gitea.udyat.site/ElJoker63/UDYAT-VPN/releases/download/v1.0.3/UDYAT-VPN-v1.0.3-ios.ipa",
             "localizedDescription": "VPN profesional multiplataforma con split-tunneling inteligente y privacidad sin registros.",
             "tintColor": "00F5A0",
             "size": 10041663
