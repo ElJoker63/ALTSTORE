@@ -49,12 +49,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.2.8",
-            "versionDate": "2026-11-09",
-            "versionDescription": "- **Espacio libre en disco correcto en todos los sistemas**\n- **Reanudar varias descargas a la vez**\n- **Avisos claros con los archivos .udyat**\n- **Actualizador de Mac corregido**\n- **Metadatos con BOM ya no fallan**\n- **La app deja de esperar de más cuando el servidor no responde**\n- **Arranque y pantalla de perfil más ágiles**\n- **La sección de nube responde mejor con muchos archivos**\n- **Las descargas se marcan como listas al instante**\n- **Menos consumo de memoria y conexiones**",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.8/udyat-downloader-ios.ipa",
-            "size": 9446038,
+            "version": "1.2.9",
+            "versionDate": "2026-11-10",
+            "versionDescription": "- **Actualizada la conexión segura y la ruta de descarga para los nuevos servidores**",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.9/udyat-downloader-ios.ipa",
+            "size": 9452250,
             "versions": [
+                {
+                    "version": "1.2.9",
+                    "date": "2026-11-10",
+                    "localizedDescription": "- **Actualizada la conexión segura y la ruta de descarga para los nuevos servidores**",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.9/udyat-downloader-ios.ipa",
+                    "size": 9452250,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.2.8",
                     "date": "2026-11-09",
