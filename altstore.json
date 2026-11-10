@@ -49,12 +49,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.2.9",
+            "version": "1.3.0",
             "versionDate": "2026-11-10",
-            "versionDescription": "- **Actualizada la conexión segura y la ruta de descarga para los nuevos servidores**",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.2.9/udyat-downloader-ios.ipa",
-            "size": 9452250,
+            "versionDescription": "- **Solucionado el listado de archivos en la carpeta de usuario en la nube**\n- **Actualizada la conexión segura y la ruta de descarga para los nuevos servidores**",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.3.0/udyat-downloader-ios.ipa",
+            "size": 9452209,
             "versions": [
+                {
+                    "version": "1.3.0",
+                    "date": "2026-11-10",
+                    "localizedDescription": "- **Solucionado el listado de archivos en la carpeta de usuario en la nube**\n- **Actualizada la conexión segura y la ruta de descarga para los nuevos servidores**",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.3.0/udyat-downloader-ios.ipa",
+                    "size": 9452209,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.2.9",
                     "date": "2026-11-10",
