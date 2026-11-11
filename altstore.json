@@ -49,12 +49,20 @@
                 "entitlements": [],
                 "privacy": {}
             },
-            "version": "1.3.1",
-            "versionDate": "2026-11-10",
-            "versionDescription": "- **Solución a bugs de congelación de la descarga**",
-            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.3.1/udyat-downloader-ios.ipa",
-            "size": 9457431,
+            "version": "1.3.2",
+            "versionDate": "2026-11-11",
+            "versionDescription": "- **Descargas a máxima velocidad**: Se corrigió el problema que limitaba la velocidad y ahora la aplicación aprovecha toda la velocidad real de tu conexión a internet.\n- **Más conexiones en paralelo**: Ahora descarga con 6 hilos al mismo tiempo por defecto para que los archivos bajen mucho más rápido.\n- **Descargas continuas sin frenarse**: Si una parte del archivo falla por problemas de señal, la app ya no se traba ni baja la velocidad; pasa a la siguiente parte y reintenta la pendiente después.\n- **Compatibilidad con los nuevos enlaces de la nube**: Ahora se conecta directamente a las nuevas direcciones del servidor para evitar fallos y errores al comenzar a descargar.\n- **Velocidad en tiempo real**: El indicador de velocidad en pantalla ahora responde al instante reflejando la velocidad real sin demorarse.\n- **Menor consumo del teléfono y la PC**: Se redujo el uso del disco y almacenamiento al guardar el progreso de las descargas.\n- **Interfaz completamente fluida durante descargas**: Se optimizaron las comprobaciones y el pintado en pantalla para que la aplicación nunca se congele ni tenga tirones mientras descarga archivos grandes.\n- **Arreglo visual en la pantalla principal**: Corregido el problema visual que mostraba franjas amarillas y negras en pantallas pequeñas o al abrir el teclado.",
+            "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.3.2/udyat-downloader-ios.ipa",
+            "size": 9463677,
             "versions": [
+                {
+                    "version": "1.3.2",
+                    "date": "2026-11-11",
+                    "localizedDescription": "- **Descargas a máxima velocidad**: Se corrigió el problema que limitaba la velocidad y ahora la aplicación aprovecha toda la velocidad real de tu conexión a internet.\n- **Más conexiones en paralelo**: Ahora descarga con 6 hilos al mismo tiempo por defecto para que los archivos bajen mucho más rápido.\n- **Descargas continuas sin frenarse**: Si una parte del archivo falla por problemas de señal, la app ya no se traba ni baja la velocidad; pasa a la siguiente parte y reintenta la pendiente después.\n- **Compatibilidad con los nuevos enlaces de la nube**: Ahora se conecta directamente a las nuevas direcciones del servidor para evitar fallos y errores al comenzar a descargar.\n- **Velocidad en tiempo real**: El indicador de velocidad en pantalla ahora responde al instante reflejando la velocidad real sin demorarse.\n- **Menor consumo del teléfono y la PC**: Se redujo el uso del disco y almacenamiento al guardar el progreso de las descargas.\n- **Interfaz completamente fluida durante descargas**: Se optimizaron las comprobaciones y el pintado en pantalla para que la aplicación nunca se congele ni tenga tirones mientras descarga archivos grandes.\n- **Arreglo visual en la pantalla principal**: Corregido el problema visual que mostraba franjas amarillas y negras en pantallas pequeñas o al abrir el teclado.",
+                    "downloadURL": "https://github.com/ElJoker63/UDYATDL/releases/download/v1.3.2/udyat-downloader-ios.ipa",
+                    "size": 9463677,
+                    "minOSVersion": "14.0"
+                },
                 {
                     "version": "1.3.1",
                     "date": "2026-11-10",
